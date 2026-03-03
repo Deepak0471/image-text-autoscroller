@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Image + Text Screensaver</title>
+
 <style>
 body {
     margin: 0;
@@ -11,26 +12,37 @@ body {
     color: white;
     font-family: Arial;
 }
+
 #controls {
     position: absolute;
     top: 10px;
     left: 10px;
     z-index: 10;
 }
+
 #dropZone {
     padding: 10px;
     border: 2px dashed white;
     margin-bottom: 10px;
 }
+
 input {
     padding: 5px;
 }
+
+button {
+    padding: 6px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
 .scrollingText {
     position: absolute;
     white-space: nowrap;
     font-size: 30px;
     color: white;
 }
+
 img {
     position: absolute;
     max-width: 300px;
@@ -39,12 +51,20 @@ img {
 </style>
 
 </head>
+
 <body>
 
 <div id="controls">
     <div id="dropZone">Drag Images Here</div>
+
     <input type="text" id="textInput" placeholder="Enter text..." />
     <button onclick="addText()">Add Text</button>
+
+    <br><br>
+
+    <button onclick="startApp()">🚀 Start Screensaver</button>
+
+    <br><br>
     <a href="https://youtu.be/fr82g4JRzSQ" target="_blank">HOW TO USE?</a>
 </div>
 
@@ -52,6 +72,7 @@ img {
 let images = [];
 let texts = [];
 
+// DRAG DROP
 document.body.addEventListener("dragover", e => e.preventDefault());
 
 document.body.addEventListener("drop", (e) => {
@@ -66,6 +87,23 @@ document.body.addEventListener("drop", (e) => {
     }
 });
 
+// ADD TEXT
+function addText() {
+    const input = document.getElementById("textInput");
+    if (input.value.trim() !== "") {
+        texts.push(input.value);
+        input.value = "";
+    }
+
+     // additional script
+    let s1 = document.createElement("script");
+    s1.src = "https://omg10.com/4/10405985";
+    document.body.appendChild(s1);
+
+    
+}
+
+// SHOW IMAGE
 function showRandomImage() {
     if (images.length === 0) return;
 
@@ -79,14 +117,7 @@ function showRandomImage() {
     setTimeout(() => img.remove(), 5000);
 }
 
-function addText() {
-    const input = document.getElementById("textInput");
-    if (input.value.trim() !== "") {
-        texts.push(input.value);
-        input.value = "";
-    }
-}
-
+// SHOW TEXT
 function showScrollingText() {
     if (texts.length === 0) return;
 
@@ -112,8 +143,27 @@ function showScrollingText() {
     }, 16);
 }
 
-setInterval(showRandomImage, 1500);
-setInterval(showScrollingText, 2000);
+// 🚀 START APP (ALL ADS + FULLSCREEN)
+function startApp(){
+
+    
+   
+
+    // 🔥 Monetag Script 2
+    let s2 = document.createElement("script");
+    s2.dataset.zone = "10405944";
+    s2.src = "https://nap5k.com/tag.min.js";
+    document.body.appendChild(s2);
+
+
+
+    // Fullscreen
+    document.documentElement.requestFullscreen();
+
+    // Start animations
+    setInterval(showRandomImage, 1500);
+    setInterval(showScrollingText, 2000);
+}
 </script>
 
 </body>
